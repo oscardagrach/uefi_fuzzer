@@ -5,7 +5,7 @@
     https_proxy: "{{ proxy_env.https_proxy | default(lookup('env', 'https_proxy')) }}"
 
   vars:
-    install_root: "{{ playbook_dir | dirname if ansible_connection = 'local' else ansible_env.HOME + '/uefi_fuzzer' }}"
+    install_root: "{{ playbook_dir | dirname if ansible_connection == 'local' else ansible_env.HOME + '/uefi_fuzzer' }}"
 
   pre_tasks:
     - name: apt update to ensure root access is available (or fail early)

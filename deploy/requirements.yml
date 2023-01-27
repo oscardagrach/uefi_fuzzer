@@ -1,3 +1,4 @@
 collections:
-  - source: ./intellabs/kafl
-    type: dir
+  - name: kafl
+    source: git+https://github.com/IntelLabs/kAFL#/deploy/intellabs/
+    type: git
