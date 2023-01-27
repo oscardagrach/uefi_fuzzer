@@ -1,0 +1,36 @@
+# QEMU configuration
+qemu_base: -enable-kvm -machine kAFL64-v1 -cpu kAFL64-Hypervisor-v1,+vmx -no-reboot -net none -display none
+qemu_serial: -device isa-serial,chardev=kafl_serial
+qemu_memory: 256
+qemu_extra: -vga none
+#qemu_bios: ~/fuzz/OVMF.fd
+#qemu_append:
+
+# kAFL configuration
+
+#seed_dir: ~/uefi_fuzzer/fuzz/seeds/
+
+#afl_dumb_mode: true
+
+#bitmap_size: 65536
+#cpu_offset: 0
+#iterations: 5
+#payload_size: 131072
+#reload: 1
+
+#timeout_hard: 4
+#timeout_soft: 0.001
+
+debug: false
+quiet: false
+#funky: false
+#trace: true
+verbose: false
+
+processes: 1
+
+ip0: 0x2000000 - 0x2F00000
+ip1: 0xF000000 - 0xFF00000
+
+redqueen: true
+radamsa: false
