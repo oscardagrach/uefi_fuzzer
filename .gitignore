@@ -15,3 +15,6 @@ venv/
 
 # Target binaries
 fuzz/OVMF.fd
+
+# EDK2 source
+/edk2/
