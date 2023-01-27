@@ -1,0 +1,2 @@
+- name: Prepare EDK2/OVMF
+  import_tasks: build.yml

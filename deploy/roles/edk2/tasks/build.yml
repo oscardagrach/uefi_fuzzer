@@ -1,0 +1,33 @@
+- name: Install EDK2 build dependencies
+  ansible.builtin.package:
+    name:
+      - nasm
+      - iasl
+      - uuid-dev
+      - python3
+    state: present
+  become: true
+
+- name: Clone EDK2 repo
+  ansible.builtin.git:
+    repo: "{{ edk2_url }}"
+    dest: "{{ edk2_root }}"
+    version: "{{ edk2_revision | default(omit) }}"
+    depth: "{{ git_clone_depth | default(omit) }}"
+    force: true
+
+- name: Build BaseTools
+  ansible.builtin.make:
+    chdir: "{{ edk2_root }}/BaseTools"
+    params:
+      --jobs: "{{ ansible_processor_nproc }}"
+
+- name: Build EDK2/OVMF
+  ansible.builtin.shell: >
+    source edksetup.sh --reconfig &&
+    build -n $(nproc) -p OvmfPkg/OvmfPkgX64.dsc -t GCC5 -a X64 -D DEBUG_ON_SERIAL_PORT=TRUE &&
+    cp "{{ edk2_root }}/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd" "{{ install_root }}/fuzz/OVMF.fd"
+  args:
+    executable: /bin/bash
+    chdir: "{{ edk2_root }}"
+  changed_when: false
