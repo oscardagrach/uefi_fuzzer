@@ -7,6 +7,8 @@ This project is a WIP and will be updated to act as a resource for UEFI fuzzing.
 
 Our harness/target source can be found [here](https://github.com/oscardagrach/edk2)
 
+You can find more in-depth harnessing examples [here](https://github.com/IntelLabs/kAFL.targets) and [here](https://github.com/IntelLabs/kafl.edk2/commits/TDVF_fuzz_hello)
+
 ## Requirements
 - Intel Skylake or later for Intel PT support
 - Patched Host Kernel - see [here](https://github.com/nyx-fuzz/KVM-Nyx)
