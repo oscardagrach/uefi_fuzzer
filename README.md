@@ -1,5 +1,5 @@
 # uefi_fuzzer
-EDK2/OVMF Fuzzer based on kAFL/Nyx/KVM
+
 
 ## Summary
 This is a UEFI fuzzing demo using KAFL, Nyx, KVM, and OVMF/EDK2 to demonstrate their capability.
