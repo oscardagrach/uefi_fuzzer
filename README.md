@@ -9,9 +9,9 @@ Our harness/target source can be found [here](https://github.com/oscardagrach/ed
 
 ## Requirements
 - Intel Skylake or later for Intel PT support
-- Patched Host Kernel - see https://github.com/nyx-fuzz/KVM-Nyx
+- Patched Host Kernel - see [here](https://github.com/nyx-fuzz/KVM-Nyx)
 - Recent Debian/Ubuntu (20.04 or bullseye and newer)
-- Harnessed target (we will use my EDK2 fork https://github.com/oscardagrach/edk2)
+- Harnessed target - see [here](https://github.com/oscardagrach/edk2)
 
 ```
 sudo apt install python3-venv make git
