@@ -5,15 +5,13 @@
 This is a UEFI fuzzing demo using KAFL, Nyx, KVM, and OVMF/EDK2 to demonstrate their capability.
 This project is a WIP and will be updated to act as a resource for UEFI fuzzing.
 
-Our harness/target source can be found [here](https://github.com/oscardagrach/edk2)
-
 You can find more in-depth harnessing examples [here](https://github.com/IntelLabs/kAFL.targets) and [here](https://github.com/IntelLabs/kafl.edk2/commits/TDVF_fuzz_hello)
 
 ## Requirements
 - Intel Skylake or later for Intel PT support
 - Patched Host Kernel - see [here](https://github.com/nyx-fuzz/KVM-Nyx)
 - Recent Debian/Ubuntu (20.04 or bullseye and newer)
-- Harnessed target - see [here](https://github.com/oscardagrach/edk2)
+- Harnessed target (EDK2/OVMF) - see [here](https://github.com/oscardagrach/edk2)
 
 ```
 sudo apt install python3-venv make git
