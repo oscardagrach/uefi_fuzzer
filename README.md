@@ -11,7 +11,7 @@ You can find more in-depth harnessing examples [here](https://github.com/IntelLa
 - Intel Skylake or later for Intel PT support
 - Patched Host Kernel - see [here](https://github.com/nyx-fuzz/KVM-Nyx)
 - Recent Debian/Ubuntu (20.04 or bullseye and newer)
-- Harnessed target (EDK2/OVMF) - see [here](https://github.com/oscardagrach/edk2)
+- Harnessed target (EDK2/OVMF) - see [here](https://github.com/oscardagrach/edk2) WIP
 
 ```
 sudo apt install python3-venv make git
